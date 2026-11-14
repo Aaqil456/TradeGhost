@@ -131,7 +131,7 @@ describe('history filtering/sorting', () => {
 describe('history table rendering', () => {
   it('colors WIN green and LOSS red after import', async () => {
     stubSampleFetch()
-    renderAt('/history')
+    renderAt('/overview')
     fireEvent.click(screen.getByRole('button', { name: /try with sample data/i }))
     // navigates to /overview; go to history through nav
     await screen.findByRole('heading', { name: 'Overview' })
