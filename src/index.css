@@ -49,3 +49,13 @@
     transform: translateY(0);
   }
 }
+
+.tg-fade {
+  animation: tg-fade-in 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-fade {
+    animation: none;
+  }
+}
