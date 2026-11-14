@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run full test suite on task complete",
+      "trigger": "PostTaskExec",
+      "description": "Runs the full test suite after a spec task is marked complete, so a task is only considered done when tests pass.",
+      "action": {
+        "type": "command",
+        "command": "npx vitest run",
+        "timeout": 180
+      }
+    }
+  ]
+}

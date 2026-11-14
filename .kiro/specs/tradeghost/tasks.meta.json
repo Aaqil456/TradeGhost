@@ -1,0 +1,507 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "AppShell: sidebar nav (desktop) + responsive mobile nav": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630831646
+      },
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630851571
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631248382
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631276996
+      }
+    ],
+    "React Router 7 routes + layout route": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630832589
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631249901
+      }
+    ],
+    "Design tokens in `src/index.css` (`@theme`): dark palette, green/red semantics, brand accent, tabular figures": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630833230
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631251905
+      }
+    ],
+    "Base UI components: `Card`, `MetricCard`, `Button`, `Badge`, `EmptyState`, `Spinner`, `SearchInput`": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630833610
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631252795
+      }
+    ],
+    "`Settings` page: privacy/data-handling explanation, disclaimers, about": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630833998
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631256369
+      }
+    ],
+    "Empty-state layout for Overview/Analytics/History with Import CTA": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630834414
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631256814
+      }
+    ],
+    "`store/AppContext` + reducer skeleton (session-only, no persistence)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630834821
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631257987
+      }
+    ],
+    "`lib/finance/decimal.ts` config + `lib/finance/types.ts` domain types": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630835172
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631258428
+      }
+    ],
+    "`lib/csv/parse.ts` (PapaParse wrapper)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630835497
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631258791
+      }
+    ],
+    "`lib/csv/schema.ts` + `lib/csv/validate.ts` (collect-all errors, row-numbered)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630835820
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631259141
+      }
+    ],
+    "Missing-fees confirm flow (no silent zeroing)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630836130
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631259545
+      }
+    ],
+    "`FileDropzone` component (drag-drop + click)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630836415
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631259924
+      }
+    ],
+    "Validation report UI (errors/warnings/skipped)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630836738
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631260542
+      }
+    ],
+    "`TradePreview` table (computed net P&L + WIN/LOSS)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630837038
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631260968
+      }
+    ],
+    "Sample template download": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630837335
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631261300
+      }
+    ],
+    "Remove/re-upload dataset → back to empty state": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630837705
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631261664
+      }
+    ],
+    "Wire import into `AppContext`": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630838043
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631262008
+      }
+    ],
+    "`lib/finance/pnl.ts` (gross/net, LONG/SHORT)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630838598
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631262592
+      }
+    ],
+    "`lib/finance/metrics.ts` (totals, win rate, averages, best/worst)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630838798
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631263867
+      }
+    ],
+    "`lib/finance/cumulative.ts` (chronological running sum)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630838976
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631264185
+      }
+    ],
+    "`lib/finance/drawdown.ts` (realized P&L drawdown, labeled)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630839163
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631264544
+      }
+    ],
+    "`lib/finance/pairs.ts` (per-pair breakdown)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630839347
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631264744
+      }
+    ],
+    "`lib/finance/insights.ts` (data-gated behavior insights)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630839534
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631264963
+      }
+    ],
+    "`lib/format/format.ts` (currency/number/date/pct; the only Number display boundary)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630839714
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631265311
+      }
+    ],
+    "Overview dashboard: metric cards + cumulative chart + pair breakdown": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630839924
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631265562
+      }
+    ],
+    "Recharts theming + custom tooltip": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630840098
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631265755
+      }
+    ],
+    "Analytics page: extremes + insights": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630840281
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631265981
+      }
+    ],
+    "History table: search/filter/sort + green/red coding": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630840466
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631266200
+      }
+    ],
+    "Property-based finance tests (fast-check)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630840670
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631266472
+      }
+    ],
+    "Unit tests: metrics, pairs, cumulative, drawdown, insights": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630840846
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631266712
+      }
+    ],
+    "CSV validation tests (malformed, missing cols, wrong types, blanks, BOM, delimiters)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841012
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631266909
+      }
+    ],
+    "Edge-case tests (0 trades, all-win, all-loss, single trade)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841216
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631267112
+      }
+    ],
+    "Component tests (dashboard, empty state, history table)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841379
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631267315
+      }
+    ],
+    "Responsive polish + accessibility pass": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841568
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631267512
+      }
+    ],
+    "Bug fixes": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841752
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631267714
+      }
+    ],
+    "README: install, run, build, deploy (Cloudflare Pages), Node 22 LTS note": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630841929
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631267869
+      }
+    ],
+    "Verify `.kiro/` tracked and not gitignored": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630842119
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631268078
+      }
+    ],
+    "`LICENSE` (MIT)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630842313
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631268269
+      }
+    ],
+    "Cloudflare Pages config (`public/_redirects`, build/output settings documented)": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630842511
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631268495
+      }
+    ],
+    "`npm run build` clean": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630842678
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631268679
+      }
+    ],
+    "Deploy to Cloudflare Pages + verify public URL": [
+      {
+        "executionId": "c15189ee-cb1a-4d6f-b6f2-46c64c289900",
+        "chatSessionId": "sess_7153bfb0-f65b-40d4-90e9-35d26ddffb8f",
+        "timestamp": 1794630842871
+      },
+      {
+        "executionId": "75afb8dd-5a1e-4325-a0f8-ec69e24bf448",
+        "chatSessionId": "sess_48c01977-fa8c-4419-a99b-77fc02cdd16e",
+        "timestamp": 1794631268912
+      }
+    ]
+  }
+}

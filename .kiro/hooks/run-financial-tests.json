@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run financial calc tests on save",
+      "trigger": "PostFileSave",
+      "description": "Re-runs the financial calculation tests whenever a finance module source file is saved.",
+      "action": {
+        "type": "command",
+        "command": "npx vitest run finance",
+        "timeout": 120
+      }
+    }
+  ]
+}
