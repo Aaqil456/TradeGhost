@@ -10,6 +10,9 @@ Built for the **Kiroween 2026 Hackathon** — Frankenstein category (CSV process
 
 ## Features
 
+- **Live wallet connect** — paste a Hyperliquid wallet address (no API key); trades load and refresh every minute.
+- **Forecast** — Monte Carlo projection of your own performance from your past trades (not a price prediction).
+- **Suggestions** — data-grounded hints with evidence, from your history only.
 - **CSV upload** with drag-and-drop, validation, preview, and a downloadable sample template.
 - **Performance dashboard** — net P&L, win rate, averages, best/worst trade, cumulative realized P&L chart, and per-pair breakdown.
 - **Trading analytics** — most/least profitable pairs, largest win/loss, and behavior insights derived only from your data.
@@ -88,7 +91,7 @@ See `.kiro/steering/architecture.md` for the full module layout. Key areas:
 
 - All CSV processing and calculations run in the browser.
 - No `localStorage`, `sessionStorage`, `IndexedDB`, cookies, or server storage is used for trade data.
-- No exchange API keys are requested or accepted.
+- No exchange API keys are requested or accepted. Live mode uses only a public wallet address, sent from your browser straight to Hyperliquid's public API. It is not stored.
 - No external analytics or tracking calls are made.
 
 ## License

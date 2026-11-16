@@ -22,3 +22,13 @@ export function PairChart({ pairs }: { pairs: PairBreakdown[] }) {
     </Suspense>
   )
 }
+
+const Forecast = lazy(() => import('./Charts').then((m) => ({ default: m.ForecastChart })))
+
+export function ForecastChart(props: { points: { step: number; p5: number; p50: number; p95: number }[]; startPnl: number }) {
+  return (
+    <Suspense fallback={fallback}>
+      <Forecast {...props} />
+    </Suspense>
+  )
+}

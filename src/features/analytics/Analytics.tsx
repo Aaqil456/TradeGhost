@@ -1,6 +1,7 @@
 import { NoData } from '../../components/ui/NoData'
 import { Card, Disclaimer, MetricCard, PageHeader, signClass } from '../../components/ui/primitives'
 import { MIN_TRADES } from '../../lib/finance/insights'
+import { SUGGESTION_MIN_TRADES } from '../../lib/finance/suggestions'
 import { leastProfitable, mostLosses, mostProfitable } from '../../lib/finance/pairs'
 import { fmtCurrency, fmtDate, fmtPct, signOf } from '../../lib/format/format'
 import { useAnalysis } from '../../store/AppContext'
@@ -15,7 +16,7 @@ export function Analytics() {
       </>
     )
   }
-  const { metrics: m, pairs, insights, drawdown } = a
+  const { metrics: m, pairs, insights, drawdown, suggestions } = a
   const best = mostProfitable(pairs)
   const worst = leastProfitable(pairs)
   const losses = mostLosses(pairs)
@@ -88,6 +89,33 @@ export function Analytics() {
                 }`}
               >
                 {i.text}
+              </li>
+            ))}
+          </ul>
+        )}
+      </Card>
+      <Card className="mt-6">
+        <h2 className="mb-1 text-base font-semibold">Suggestions from your history</h2>
+        <p className="mb-3 text-xs text-muted">
+          Suggestions are based only on your past trades, not on market predictions. They are not financial advice.
+        </p>
+        {suggestions.length === 0 ? (
+          <p className="text-sm text-muted">
+            {a.trades.length < SUGGESTION_MIN_TRADES
+              ? `Import at least ${SUGGESTION_MIN_TRADES} trades to see suggestions.`
+              : 'Nothing stands out in your data right now.'}
+          </p>
+        ) : (
+          <ul className="space-y-2">
+            {suggestions.map((s) => (
+              <li
+                key={s.id}
+                className={`rounded-lg border-l-2 bg-panel-2 px-3 py-2 text-sm ${
+                  s.tone === 'positive' ? 'border-positive' : s.tone === 'negative' ? 'border-negative' : 'border-accent'
+                }`}
+              >
+                <div>{s.text}</div>
+                <div className="mt-1 text-xs text-muted">{s.evidence}</div>
               </li>
             ))}
           </ul>

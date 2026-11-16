@@ -10,9 +10,9 @@ export function NoData({ title = 'No trades imported yet' }: { title?: string })
     <>
       <EmptyState
         title={title}
-        body="Upload your completed trade history as a CSV to see your real performance. Everything is processed locally in your browser."
+        body="Connect a Hyperliquid wallet address for live analytics, or upload a CSV of completed trades. Everything is analyzed in your browser."
       >
-        <ButtonLink to="/import">Import your CSV</ButtonLink>
+        <ButtonLink to="/import">Connect wallet or import CSV</ButtonLink>
         <Button
           disabled={loading}
           onClick={async () => {

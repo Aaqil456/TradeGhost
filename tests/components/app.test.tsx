@@ -43,7 +43,7 @@ describe('empty states (no fake numbers)', () => {
   it.each(['/overview', '/analytics', '/history'])('%s shows an import CTA and no metrics', (path) => {
     renderAt(path)
     expect(screen.getByText('No trades imported yet')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /import your csv/i })).toHaveAttribute('href', '/import')
+    expect(screen.getByRole('link', { name: /connect wallet or import csv/i })).toHaveAttribute('href', '/import')
     expect(screen.queryByText(/net p&l/i)).not.toBeInTheDocument()
   })
 
@@ -149,8 +149,8 @@ describe('reducer', () => {
   it('imports and clears', () => {
     const trades = validateText(SAMPLE).validTrades.map(computeTrade)
     const meta = { fileName: 'a.csv', importedAt: new Date(0), rowCount: trades.length }
-    const s1 = reducer({ trades: null, meta: null }, { type: 'IMPORT_TRADES', trades, meta })
+    const s1 = reducer({ trades: null, meta: null, live: null }, { type: 'IMPORT_TRADES', trades, meta })
     expect(s1.trades).toHaveLength(14)
-    expect(reducer(s1, { type: 'CLEAR_TRADES' })).toEqual({ trades: null, meta: null })
+    expect(reducer(s1, { type: 'CLEAR_TRADES' })).toEqual({ trades: null, meta: null, live: null })
   })
 })

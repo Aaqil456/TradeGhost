@@ -43,6 +43,14 @@ Phased implementation. A task is only marked complete when its tests pass (where
 - [x] Analytics page: extremes + insights
 - [x] History table: search/filter/sort + green/red coding
 
+## Phase 4b — Live data, forecast, suggestions (v0.2)
+- [x] Spec + steering updated (wallet address only, public API)
+- [x] `lib/sources/hyperliquid.ts` (fetch, paginate, fills to trades) + reconciliation tests
+- [x] Store: live source, 60 s auto-refresh, connect/disconnect
+- [x] Connect wallet UI + live status
+- [x] `lib/finance/forecast.ts` + Forecast page
+- [x] `lib/finance/suggestions.ts` + Analytics panel
+
 ## Phase 5 — Testing & refinement
 - [x] Property-based finance tests (fast-check)
 - [x] Unit tests: metrics, pairs, cumulative, drawdown, insights

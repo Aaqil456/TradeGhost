@@ -83,8 +83,14 @@ Beginner to intermediate crypto traders, active traders reviewing performance, a
 - **NFR-7 Compliance:** MIT license; `.kiro/` tracked in Git; README with setup + deploy instructions; deployable to a public URL via Cloudflare Pages.
 - **NFR-8 Disclaimers:** Historical analysis/educational insights, not financial advice; data handled locally.
 
+## 5b. Extension requirements (v0.2)
+- **FR-L1 Live wallet connect:** user pastes a Hyperliquid wallet address (no API key); trades load and auto-refresh every 60 s. Acceptance: invalid address rejected before any request; fills paginated and de-duplicated; failures keep last good data and show an error.
+- **FR-L2 Fills to trades:** fills are grouped into position cycles (flat to flat); entry/exit are quantity-weighted averages; all fees of the cycle are charged to the trade; flips split fees proportionally; open positions are excluded and reported. Acceptance: derived gross P&L and fees reconcile with the exchange's own closedPnl/fee totals on a real-wallet fixture.
+- **FR-F1 Forecast:** bootstrap Monte Carlo projection of the user's own net P&L per trade (median, 5-95% range, probability of profit, expectancy). Requires >= 30 trades; deterministic seed. Not a price prediction.
+- **FR-S1 Suggestions:** data-grounded suggestions (direction, pair, risk/reward, fees, losing streak), each with evidence and sample-size gating, labeled as not financial advice.
+
 ## 6. Out of scope
-Exchange API integrations, authentication, subscriptions/payments, AI features, trading signals, backend/database, any data persistence, multi-exchange native formats, live trading.
+Exchange API-key integrations, authentication, subscriptions/payments, AI features, buy/sell trading signals or price prediction, backend/database, any data persistence, multi-exchange native formats, live trading, spot-trade pairing.
 
 ## 7. Data model (summary)
 - `Trade`: `{ id, date: Date, symbol: string, side: 'LONG'|'SHORT', entryPrice: Decimal, exitPrice: Decimal, quantity: Decimal, fees: Decimal }`

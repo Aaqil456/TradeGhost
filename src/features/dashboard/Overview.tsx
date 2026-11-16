@@ -7,7 +7,7 @@ import { PairTable } from './PairTable'
 
 export function Overview() {
   const a = useAnalysis()
-  const { meta } = useApp()
+  const { meta, live, sync, refreshLive } = useApp()
 
   if (!a) {
     return (
@@ -24,6 +24,19 @@ export function Overview() {
     <>
       <PageHeader title="Overview" subtitle={meta ? `${meta.fileName} · ${meta.rowCount} trades` : undefined} />
 
+      {live && (
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-positive/30 bg-positive/5 px-4 py-2 text-xs text-muted">
+          <span className="flex items-center gap-2">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-positive" aria-hidden="true" />
+            Live from Hyperliquid · updated {live.lastSynced.toLocaleTimeString()}
+            {sync.error && <span className="text-negative"> · {sync.error}</span>}
+          </span>
+          <button type="button" onClick={() => void refreshLive()} disabled={sync.status === 'loading'} className="font-medium text-accent hover:underline disabled:opacity-50">
+            {sync.status === 'loading' ? 'Refreshing…' : 'Refresh now'}
+          </button>
+          {live.warnings.length > 0 && <ul className="w-full list-disc pl-5">{live.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
+        </div>
+      )}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <MetricCard label="Total net P&L" value={fmtCurrency(m.totalNetPnl, { signed: true })} sign={signOf(m.totalNetPnl)} />
         <MetricCard label="Total trades" value={String(m.totalTrades)} />

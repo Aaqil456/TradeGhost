@@ -6,6 +6,7 @@ import { TEMPLATE_FILE_NAME } from '../../lib/csv/schema'
 import { validateText, type RowIssue } from '../../lib/csv/validate'
 import { fmtCurrency, fmtDate, fmtPrice, signOf } from '../../lib/format/format'
 import { useApp } from '../../store/AppContext'
+import { ConnectWallet } from './ConnectWallet'
 import { useLoadSample } from './useLoadSample'
 
 const MAX_BYTES = 10 * 1024 * 1024
@@ -67,8 +68,8 @@ export function Import() {
   return (
     <>
       <PageHeader
-        title="Import Data"
-        subtitle="Upload a CSV of completed trades. Files are read locally in your browser and never uploaded."
+        title="Connect or Import"
+        subtitle="Connect a wallet for live analytics, or upload a CSV. Everything is analyzed in your browser."
         action={
           <a
             href="/sample-trade-history.csv"
@@ -79,6 +80,8 @@ export function Import() {
           </a>
         }
       />
+
+      <ConnectWallet />
 
       {trades && meta && !file && (
         <Card className="mb-6 flex flex-wrap items-center justify-between gap-3">

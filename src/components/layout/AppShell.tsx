@@ -12,15 +12,16 @@ const icon = (d: string): ReactNode => (
 const NAV = [
   { to: '/overview', label: 'Overview', icon: icon('M3 12l9-9 9 9M5 10v10h14V10') },
   { to: '/analytics', label: 'Analytics', icon: icon('M4 20V10M10 20V4M16 20v-7M22 20H2') },
+  { to: '/forecast', label: 'Forecast', icon: icon('M3 17l6-6 4 4 8-8M15 7h6v6') },
   { to: '/history', label: 'History', icon: icon('M4 6h16M4 12h16M4 18h10') },
-  { to: '/import', label: 'Import', icon: icon('M12 3v12m0 0l-4-4m4 4l4-4M4 21h16') },
+  { to: '/import', label: 'Connect', icon: icon('M12 3v12m0 0l-4-4m4 4l4-4M4 21h16') },
   { to: '/settings', label: 'Settings', icon: icon('M12 15a3 3 0 100-6 3 3 0 000 6zM19 12a7 7 0 00-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 00-2-1.2L14.2 3h-4l-.4 2.6a7 7 0 00-2 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 005 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-.9c.6.5 1.3.9 2 1.2l.4 2.6h4l.4-2.6c.7-.3 1.4-.7 2-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z') },
 ]
 
 const linkBase = 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors'
 
 export function AppShell() {
-  const { meta } = useApp()
+  const { meta, live } = useApp()
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[232px_1fr]">
       <aside className="sticky top-0 hidden h-dvh flex-col border-r border-line bg-panel p-4 md:flex">
@@ -46,7 +47,16 @@ export function AppShell() {
         </nav>
         <div className="mt-auto rounded-lg border border-line bg-base/50 p-3 text-xs text-muted">
           <div className="mb-1 font-medium text-ink">{meta ? meta.fileName : 'No data loaded'}</div>
-          {meta ? `${meta.rowCount} trades · local only` : 'Your data never leaves your browser.'}
+          {live ? (
+            <span className="flex items-center gap-1.5">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-positive" aria-hidden="true" />
+              Live · {meta?.rowCount} trades
+            </span>
+          ) : meta ? (
+            `${meta.rowCount} trades · local only`
+          ) : (
+            'Connect a wallet or import a CSV.'
+          )}
         </div>
       </aside>
 
@@ -64,7 +74,7 @@ export function AppShell() {
 
       <nav
         aria-label="Primary mobile"
-        className="fixed inset-x-0 bottom-0 z-10 grid grid-cols-5 border-t border-line bg-panel md:hidden"
+        className="fixed inset-x-0 bottom-0 z-10 grid grid-cols-6 border-t border-line bg-panel md:hidden"
       >
         {NAV.map((n) => (
           <NavLink

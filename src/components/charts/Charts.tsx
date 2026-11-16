@@ -109,3 +109,43 @@ export function PairChart({ pairs }: { pairs: PairBreakdown[] }) {
     </div>
   )
 }
+
+export function ForecastChart({ points, startPnl }: { points: { step: number; p5: number; p50: number; p95: number }[]; startPnl: number }) {
+  const data = points.map((p) => ({
+    step: p.step,
+    median: Math.round(p.p50 * 100) / 100,
+    band: [Math.round(p.p5 * 100) / 100, Math.round(p.p95 * 100) / 100] as [number, number],
+    low: p.p5,
+    high: p.p95,
+  }))
+  return (
+    <div className="h-72 w-full" role="img" aria-label="Projected cumulative P&L range over future trades">
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
+          <CartesianGrid stroke={C.grid} vertical={false} />
+          <XAxis dataKey="step" stroke={C.muted} tick={{ fontSize: 11 }} tickLine={false} />
+          <YAxis stroke={C.muted} tick={{ fontSize: 11 }} tickLine={false} axisLine={false} width={48} tickFormatter={axisMoney} />
+          <ReferenceLine y={0} stroke={C.muted} strokeDasharray="3 3" />
+          <ReferenceLine y={startPnl} stroke={C.accent} strokeDasharray="2 4" />
+          <Tooltip
+            content={({ active, payload }) => {
+              const row = active ? (payload?.[0]?.payload as (typeof data)[number] | undefined) : undefined
+              if (!row) return null
+              return (
+                <div className="rounded-lg border border-line bg-panel-2 px-3 py-2 text-xs shadow-lg">
+                  <div className="text-muted">After {row.step} more trades</div>
+                  <div className="nums font-mono text-sm font-semibold text-ink">Median {row.median.toFixed(2)}</div>
+                  <div className="text-muted">
+                    Likely range {row.low.toFixed(2)} to {row.high.toFixed(2)}
+                  </div>
+                </div>
+              )
+            }}
+          />
+          <Area type="monotone" dataKey="band" stroke="none" fill={C.accent} fillOpacity={0.18} isAnimationActive={false} />
+          <Area type="monotone" dataKey="median" stroke={C.accent} strokeWidth={2} fill="none" isAnimationActive={false} />
+        </AreaChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
