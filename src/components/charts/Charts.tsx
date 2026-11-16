@@ -78,7 +78,7 @@ export function CumulativeChart({ series }: { series: CumulativePoint[] }) {
               />
             }
           />
-          <Area type="monotone" dataKey="value" stroke={color} strokeWidth={2} fill="url(#cumFill)" isAnimationActive />
+          <Area type="monotone" dataKey="value" stroke={color} strokeWidth={2} fill="url(#cumFill)" isAnimationActive={false} />
         </AreaChart>
       </ResponsiveContainer>
     </div>
@@ -93,13 +93,13 @@ export function PairChart({ pairs }: { pairs: PairBreakdown[] }) {
         <BarChart data={data} layout="vertical" margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
           <CartesianGrid stroke={C.grid} horizontal={false} />
           <XAxis type="number" stroke={C.muted} tick={{ fontSize: 11 }} tickLine={false} tickFormatter={axisMoney} />
-          <YAxis type="category" dataKey="symbol" stroke={C.muted} tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={84} />
+          <YAxis type="category" dataKey="symbol" stroke={C.muted} tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={116} />
           <ReferenceLine x={0} stroke={C.muted} />
           <Tooltip
             cursor={{ fill: 'rgba(255,255,255,0.04)' }}
             content={<Tip render={(p) => ({ title: p.symbol as string, value: p.raw as Decimal, extra: `${p.trades as number} trades` })} />}
           />
-          <Bar dataKey="value" radius={3} barSize={18}>
+          <Bar dataKey="value" radius={3} barSize={18} isAnimationActive={false}>
             {data.map((d) => (
               <Cell key={d.symbol} fill={d.value < 0 ? C.negative : C.positive} />
             ))}

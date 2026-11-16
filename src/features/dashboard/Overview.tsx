@@ -70,18 +70,18 @@ export function Overview() {
       </div>
 
       <Card className="mt-6">
-        <h2 className="mb-1 text-base font-semibold">Cumulative realized P&L</h2>
+        <h2 className="mb-1 text-[1rem] font-semibold">Cumulative realized P&L</h2>
         <p className="mb-4 text-xs text-muted">Running total of net P&L (after fees), in chronological order.</p>
         <CumulativeChart series={series} />
       </Card>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Card>
-          <h2 className="mb-4 text-base font-semibold">Net P&L by pair</h2>
+          <h2 className="mb-4 text-[1rem] font-semibold">Net P&L by pair</h2>
           <PairChart pairs={pairs} />
         </Card>
         <Card className="overflow-x-auto">
-          <h2 className="mb-4 text-base font-semibold">Pair breakdown</h2>
+          <h2 className="mb-4 text-[1rem] font-semibold">Pair breakdown</h2>
           <PairTable pairs={pairs} />
         </Card>
       </div>

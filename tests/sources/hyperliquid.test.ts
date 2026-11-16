@@ -147,6 +147,29 @@ describe('fetchFills', () => {
   })
 
   it('surfaces HTTP errors', async () => {
-    await expect(fetchFills('0x' + '1'.repeat(40), async () => ({ ok: false, status: 429, json: async () => [] }))).rejects.toThrow(/429/)
+    await expect(fetchFills('0x' + '1'.repeat(40), async () => ({ ok: false, status: 500, json: async () => [] }))).rejects.toThrow(/500/)
+  })
+
+  it('retries HTTP 429 with backoff, then succeeds', async () => {
+    const waits: number[] = []
+    let calls = 0
+    const out = await fetchFills(
+      '0x' + '1'.repeat(40),
+      async () => {
+        calls++
+        return calls < 3 ? { ok: false, status: 429, json: async () => [] } : { ok: true, status: 200, json: async () => [] }
+      },
+      async (ms) => {
+        waits.push(ms)
+      },
+    )
+    expect(out).toEqual([])
+    expect(waits).toEqual([1000, 2000])
+  })
+
+  it('gives up after repeated 429s with a clear message', async () => {
+    await expect(
+      fetchFills('0x' + '1'.repeat(40), async () => ({ ok: false, status: 429, json: async () => [] }), async () => {}),
+    ).rejects.toThrow(/too many requests/i)
   })
 })

@@ -10,7 +10,7 @@ export const signClass: Record<Sign, string> = {
 
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <section className={`rounded-xl border border-line bg-panel p-5 ${className}`}>{children}</section>
+    <section className={`rounded-xl border border-line bg-panel p-4 sm:p-5 ${className}`}>{children}</section>
   )
 }
 
@@ -38,12 +38,12 @@ export function MetricCard({
   hint?: string
 }) {
   return (
-    <div className="tg-fade rounded-xl border border-line bg-panel p-4 transition-colors hover:border-accent/40">
-      <div className="text-xs font-medium uppercase tracking-wide text-muted">{label}</div>
-      <div className={`nums mt-2 truncate font-mono text-2xl font-semibold ${signClass[sign]}`} title={value}>
+    <div className="tg-fade min-w-0 rounded-xl border border-line bg-panel p-3 transition-colors sm:p-4 hover:border-accent/40">
+      <div className="text-[11px] font-medium uppercase tracking-wide text-muted sm:text-xs">{label}</div>
+      <div className={`nums mt-2 break-words font-mono text-lg font-semibold leading-tight [overflow-wrap:anywhere] sm:text-2xl ${signClass[sign]}`} title={value}>
         {value}
       </div>
-      {hint && <div className="mt-1 truncate text-xs text-muted">{hint}</div>}
+      {hint && <div className="mt-1 text-xs text-muted">{hint}</div>}
     </div>
   )
 }

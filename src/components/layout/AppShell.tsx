@@ -45,6 +45,15 @@ export function AppShell() {
             </NavLink>
           ))}
         </nav>
+        <NavLink
+          to="/guide"
+          className={({ isActive }) =>
+            `${linkBase} mt-2 ${isActive ? 'bg-accent/10 text-accent' : 'text-muted hover:bg-panel-2 hover:text-ink'}`
+          }
+        >
+          {icon('M9 9a3 3 0 115 2c0 1.5-2 2-2 3.5M12 18h.01M12 3a9 9 0 100 18 9 9 0 000-18z')}
+          How to use
+        </NavLink>
         <div className="mt-auto rounded-lg border border-line bg-base/50 p-3 text-xs text-muted">
           <div className="mb-1 font-medium text-ink">{meta ? meta.fileName : 'No data loaded'}</div>
           {live ? (
@@ -60,12 +69,16 @@ export function AppShell() {
         </div>
       </aside>
 
-      <div className="flex min-w-0 flex-col pb-20 md:pb-0">
+      <div className="flex min-w-0 flex-col pb-24 md:pb-0">
         <header className="flex items-center gap-2 border-b border-line bg-panel px-4 py-3 md:hidden">
           <GhostMark className="h-6 w-6 text-accent" />
           <span className="font-semibold tracking-tight">
             Trade<span className="text-accent">Ghost</span>
           </span>
+          {live && <span className="h-2 w-2 animate-pulse rounded-full bg-positive" role="img" aria-label="Live data" />}
+          <NavLink to="/guide" className="ml-auto rounded-lg border border-line px-3 py-1 text-xs font-medium text-muted hover:text-ink">
+            How to use
+          </NavLink>
         </header>
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 md:px-8 md:py-8">
           <Outlet />
@@ -74,7 +87,7 @@ export function AppShell() {
 
       <nav
         aria-label="Primary mobile"
-        className="fixed inset-x-0 bottom-0 z-10 grid grid-cols-6 border-t border-line bg-panel md:hidden"
+        className="fixed inset-x-0 bottom-0 z-10 grid grid-cols-6 border-t border-line bg-panel pb-[env(safe-area-inset-bottom)] md:hidden"
       >
         {NAV.map((n) => (
           <NavLink

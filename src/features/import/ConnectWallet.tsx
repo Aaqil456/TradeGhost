@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button, Card } from '../../components/ui/primitives'
 import { isValidAddress } from '../../lib/sources/hyperliquid'
 import { useApp } from '../../store/AppContext'
@@ -25,7 +25,7 @@ export function ConnectWallet() {
 
   return (
     <Card className="mb-6 border-accent/30">
-      <h2 className="text-base font-semibold">Connect a wallet (live)</h2>
+      <h2 className="text-[1rem] font-semibold">Connect a wallet (live)</h2>
       <p className="mt-1 text-sm text-muted">
         Paste a Hyperliquid wallet address. No API key, no signing, no sign-up. Your trades load automatically and refresh
         every minute.
@@ -47,6 +47,9 @@ export function ConnectWallet() {
           {loading ? 'Loading…' : 'Connect'}
         </Button>
       </form>
+      <p className="mt-2 text-xs text-muted">
+        No wallet? <Link to="/guide" className="text-accent hover:underline">See sample wallets and how to use</Link>.
+      </p>
       {error && (
         <p role="alert" className="mt-2 text-sm text-negative">
           {error}

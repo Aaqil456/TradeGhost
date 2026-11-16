@@ -106,7 +106,7 @@ export function Import() {
             onDrop={onDrop}
             className={`rounded-xl border-2 border-dashed p-10 text-center transition-colors ${drag ? 'border-accent bg-accent/5' : 'border-line bg-panel/50'}`}
           >
-            <p className="text-base font-medium">Drag &amp; drop your CSV here</p>
+            <p className="text-[1rem] font-medium">Drag &amp; drop your CSV here</p>
             <p className="mt-1 text-sm text-muted">or</p>
             <label className="mt-3 inline-block cursor-pointer rounded-lg bg-accent px-4 py-2 text-sm font-medium text-base focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent hover:bg-accent/90">
               Choose file
@@ -163,7 +163,7 @@ export function Import() {
 
           {hasPendingFees && (
             <Card className="border-accent/40">
-              <h2 className="text-base font-semibold">{result.missingFeeRows.length} row(s) have blank fees</h2>
+              <h2 className="text-[1rem] font-semibold">{result.missingFeeRows.length} row(s) have blank fees</h2>
               <p className="mt-1 text-sm text-muted">
                 Rows {result.missingFeeRows.slice(0, 10).join(', ')}
                 {result.missingFeeRows.length > 10 ? '…' : ''}. TradeGhost won&apos;t assume fees are zero unless you say so,
@@ -181,7 +181,7 @@ export function Import() {
           {preview.length > 0 && (
             <Card className="p-0">
               <div className="flex items-center justify-between p-4 pb-2">
-                <h2 className="text-base font-semibold">Preview</h2>
+                <h2 className="text-[1rem] font-semibold">Preview</h2>
                 <span className="text-xs text-muted">
                   First {Math.min(PREVIEW_ROWS, preview.length)} of {preview.length} valid trades
                 </span>
@@ -246,7 +246,7 @@ function IssueList({ title, issues, tone }: { title: string; issues: RowIssue[];
   const shown = issues.slice(0, 50)
   return (
     <Card className={tone === 'negative' ? 'border-negative/40' : ''}>
-      <h2 className={`text-base font-semibold ${tone === 'negative' ? 'text-negative' : ''}`}>
+      <h2 className={`text-[1rem] font-semibold ${tone === 'negative' ? 'text-negative' : ''}`}>
         {title} ({issues.length})
       </h2>
       <ul className="mt-2 max-h-64 space-y-1 overflow-y-auto text-sm" role={tone === 'negative' ? 'alert' : undefined}>

@@ -47,22 +47,47 @@ export function shortAddress(a: string): string {
   return `${a.slice(0, 6)}…${a.slice(-4)}`
 }
 
-const MAX_PAGES = 30
+const MAX_PAGES = 60
 
 /** Fetch all available fills (Hyperliquid exposes the 10,000 most recent), oldest -> newest. */
-export async function fetchFills(address: string, fetchImpl: FetchLike = fetch as unknown as FetchLike): Promise<HlFill[]> {
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+
+export async function fetchFills(
+  address: string,
+  fetchImpl: FetchLike = fetch as unknown as FetchLike,
+  wait: (ms: number) => Promise<void> = sleep,
+): Promise<HlFill[]> {
+  return (await fetchFillsDetailed(address, fetchImpl, wait)).fills
+}
+
+export async function fetchFillsDetailed(
+  address: string,
+  fetchImpl: FetchLike = fetch as unknown as FetchLike,
+  wait: (ms: number) => Promise<void> = sleep,
+): Promise<{ fills: HlFill[]; truncated: boolean }> {
   const addr = address.trim().toLowerCase()
   if (!isValidAddress(addr)) throw new Error('That is not a valid wallet address (expected 0x followed by 40 hex characters).')
 
   const seen = new Map<number, HlFill>()
   let start = 0
+  let truncated = false
   for (let page = 0; page < MAX_PAGES; page++) {
-    const res = await fetchImpl(HL_INFO_URL, {
+    if (page === MAX_PAGES - 1) truncated = true
+    // Retry rate limits (HTTP 429) with exponential backoff before giving up.
+    let res = await fetchImpl(HL_INFO_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'userFillsByTime', user: addr, startTime: start }),
     })
-    if (!res.ok) throw new Error(`Hyperliquid request failed (HTTP ${res.status}). Try again in a moment.`)
+    for (let attempt = 0; res.status === 429 && attempt < 4; attempt++) {
+      await wait(1000 * 2 ** attempt)
+      res = await fetchImpl(HL_INFO_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'userFillsByTime', user: addr, startTime: start }),
+      })
+    }
+    if (!res.ok) throw new Error(`Hyperliquid request failed (HTTP ${res.status}).${res.status === 429 ? ' Too many requests; wait a minute and try again.' : ' Try again in a moment.'}`)
     const data = await res.json()
     if (!Array.isArray(data)) throw new Error('Unexpected response from Hyperliquid.')
     const batch = data as HlFill[]
@@ -73,13 +98,19 @@ export async function fetchFills(address: string, fetchImpl: FetchLike = fetch a
         added++
       }
     }
-    if (batch.length === 0 || added === 0) break
+    if (batch.length === 0 || added === 0) {
+      truncated = false
+      break
+    }
     const last = Math.max(...batch.map((f) => f.time))
     if (last <= start && added === 0) break
     start = last
-    if (batch.length < 100) break
+    if (batch.length < 100) {
+      truncated = false
+      break
+    }
   }
-  return [...seen.values()].sort((a, b) => a.time - b.time || a.tid - b.tid)
+  return { fills: [...seen.values()].sort((a, b) => a.time - b.time || a.tid - b.tid), truncated }
 }
 
 interface Cycle {
@@ -232,11 +263,13 @@ export function fillsToTrades(fills: readonly HlFill[]): HlResult {
   if (skippedMid > 0) warnings.push(`${skippedMid} fill(s) from a position that opened before the available history were skipped.`)
   if (nonUsd > 0) warnings.push(`${nonUsd} fill(s) paid fees in a non-USDC token; those fee amounts are not converted.`)
   if (openCoins.length > 0) warnings.push(`Still-open positions are excluded until closed: ${openCoins.join(', ')}.`)
-  if (fills.length >= 10000) warnings.push('Hyperliquid only exposes the 10,000 most recent fills; older history is not included.')
 
   return { trades, openCoins, warnings, fillCount: fills.length }
 }
 
 export async function loadWallet(address: string, fetchImpl?: FetchLike): Promise<HlResult> {
-  return fillsToTrades(await fetchFills(address, fetchImpl))
+  const { fills, truncated } = await fetchFillsDetailed(address, fetchImpl)
+  const res = fillsToTrades(fills)
+  if (truncated) res.warnings.push('This wallet has a very large history; only part of it was loaded, so the newest trades may be missing.')
+  return res
 }

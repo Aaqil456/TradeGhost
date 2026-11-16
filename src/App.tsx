@@ -3,6 +3,7 @@ import { AppShell } from './components/layout/AppShell'
 import { Analytics } from './features/analytics/Analytics'
 import { Overview } from './features/dashboard/Overview'
 import { Forecast } from './features/forecast/Forecast'
+import { Guide } from './features/guide/Guide'
 import { History } from './features/history/History'
 import { Import } from './features/import/Import'
 import { Settings } from './features/settings/Settings'
@@ -18,6 +19,7 @@ export function AppRoutes() {
         <Route path="forecast" element={<Forecast />} />
         <Route path="history" element={<History />} />
         <Route path="import" element={<Import />} />
+        <Route path="guide" element={<Guide />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/overview" replace />} />
       </Route>

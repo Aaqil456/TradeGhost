@@ -53,7 +53,7 @@ export function Analytics() {
       </div>
 
       <Card className="mt-6">
-        <h2 className="mb-3 text-base font-semibold">Pairs with the most losing trades</h2>
+        <h2 className="mb-3 text-[1rem] font-semibold">Pairs with the most losing trades</h2>
         {losses.length === 0 ? (
           <p className="text-sm text-muted">No losing trades in this dataset.</p>
         ) : (
@@ -71,7 +71,7 @@ export function Analytics() {
       </Card>
 
       <Card className="mt-6">
-        <h2 className="mb-1 text-base font-semibold">Trading behavior insights</h2>
+        <h2 className="mb-1 text-[1rem] font-semibold">Trading behavior insights</h2>
         <p className="mb-3 text-xs text-muted">Only shown when your data supports them (minimum {MIN_TRADES} trades).</p>
         {insights.length === 0 ? (
           <p className="text-sm text-muted">
@@ -95,7 +95,7 @@ export function Analytics() {
         )}
       </Card>
       <Card className="mt-6">
-        <h2 className="mb-1 text-base font-semibold">Suggestions from your history</h2>
+        <h2 className="mb-1 text-[1rem] font-semibold">Suggestions from your history</h2>
         <p className="mb-3 text-xs text-muted">
           Suggestions are based only on your past trades, not on market predictions. They are not financial advice.
         </p>

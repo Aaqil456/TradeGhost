@@ -49,7 +49,7 @@ export function Forecast() {
 
       {!f ? (
         <Card>
-          <h2 className="text-base font-semibold">Not enough data yet</h2>
+          <h2 className="text-[1rem] font-semibold">Not enough data yet</h2>
           <p className="mt-1 text-sm text-muted">
             A projection needs at least {MIN_FORECAST_TRADES} completed trades to mean anything. You have {a.trades.length}. Keep
             trading or import more history.
@@ -65,7 +65,7 @@ export function Forecast() {
           </div>
 
           <Card className="mt-6">
-            <h2 className="mb-1 text-base font-semibold">Projected cumulative P&L</h2>
+            <h2 className="mb-1 text-[1rem] font-semibold">Projected cumulative P&L</h2>
             <p className="mb-4 text-xs text-muted">
               Line = median outcome. Shaded area = likely range (5th to 95th percentile). Dotted line = your P&L today.
             </p>
@@ -73,7 +73,7 @@ export function Forecast() {
           </Card>
 
           <Card className="mt-6">
-            <h2 className="text-base font-semibold">How this works</h2>
+            <h2 className="text-[1rem] font-semibold">How this works</h2>
             <p className="mt-2 text-sm text-muted">
               TradeGhost replays your {f.sampleSize} past trades in random order {f.runs.toLocaleString()} times to see how the next{' '}
               {f.horizon} trades could play out if your results keep looking like your history. It does not predict prices and cannot

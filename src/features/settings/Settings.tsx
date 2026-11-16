@@ -8,7 +8,7 @@ export function Settings() {
       <PageHeader title="Settings" subtitle="Privacy, data handling and about." />
       <div className="space-y-4">
         <Card>
-          <h2 className="text-base font-semibold">How your data is handled</h2>
+          <h2 className="text-[1rem] font-semibold">How your data is handled</h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
             <li>CSV files are read and analyzed entirely in your browser and are never uploaded.</li>
             <li>
@@ -22,7 +22,7 @@ export function Settings() {
         </Card>
 
         <Card>
-          <h2 className="text-base font-semibold">Current dataset</h2>
+          <h2 className="text-[1rem] font-semibold">Current dataset</h2>
           {trades && meta ? (
             <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm text-muted">
@@ -38,7 +38,7 @@ export function Settings() {
         </Card>
 
         <Card>
-          <h2 className="text-base font-semibold">How P&amp;L is calculated</h2>
+          <h2 className="text-[1rem] font-semibold">How P&amp;L is calculated</h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
             <li>LONG: (exit − entry) × quantity. SHORT: (entry − exit) × quantity.</li>
             <li>Net P&amp;L = gross P&amp;L − fees. A trade is a WIN only if net P&amp;L is above zero.</li>
@@ -55,7 +55,7 @@ export function Settings() {
         </Card>
 
         <Card>
-          <h2 className="text-base font-semibold">Disclaimer</h2>
+          <h2 className="text-[1rem] font-semibold">Disclaimer</h2>
           <Disclaimer className="mt-2 text-sm" />
         </Card>
         <p className="text-xs text-muted">TradeGhost · MIT licensed · built for Kiroween 2026 with Kiro.</p>
